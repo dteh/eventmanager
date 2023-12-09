@@ -31,10 +31,9 @@ func GetEventManager() (*eventManager, error) {
 	return globalManager, nil
 }
 
-// Initialize the global event manager
+// Initialize the global event manager - it still needs to be started manually
 func InitializeEventManager(ingestionEndpoint string) {
 	globalManager = NewEventManager(ingestionEndpoint)
-	go globalManager.Start()
 }
 
 var globalManager *eventManager
